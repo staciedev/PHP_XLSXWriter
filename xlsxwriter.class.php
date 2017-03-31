@@ -202,10 +202,10 @@ class XLSXWriter
 
 		self::initializeSheet($sheet_name);
 		$sheet = &$this->sheets[$sheet_name];
-		if (empty($sheet->columns))
-		{
-			$sheet->columns = $this->initializeColumnTypes( array_fill($from=0, $until=count($row), 'GENERAL') );//will map to n_auto
-		}
+		//if (empty($sheet->columns))
+		//{
+		$sheet->columns = $this->initializeColumnTypes( array_fill($from=0, $until=count($row), 'GENERAL') );//will map to n_auto
+		//}
 
 		$sheet->file_writer->write('<row collapsed="false" customFormat="false" customHeight="false" hidden="false" ht="12.1" outlineLevel="0" r="' . ($sheet->row_count + 1) . '">');
 		$c=0;
